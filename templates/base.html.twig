@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <title>{% block title %}Carrito de Compras{% endblock %}</title>
+
+        <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
+
+        {% block stylesheets %}
+        {% endblock %}
+
+        {% block javascripts %}
+            {% block importmap %}
+                {{ importmap('app') }}
+            {% endblock %}
+        {% endblock %}
+    </head>
+
+    <body>
+
+        <header>
+            <div class="title">
+                Carrito de Compras
+            </div>
+
+            <div>
+                <button class="btn-light">Ver Orden</button>
+                <button class="btn-light">Salir</button>
+            </div>
+        </header>
+
+        {% block body %}
+        {% endblock %}
+
+    </body>
+</html>
