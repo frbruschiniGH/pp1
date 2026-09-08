@@ -5,6 +5,7 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Repository\ProductoRepository;
 
 class ProductoController extends AbstractController
 {
@@ -13,7 +14,7 @@ public function listarProductos(ProductoRepository $repository): Response
 {
 
  $productos = $repository->findAll(); 
- return $this->render('producto/lista.html.twig', $productos);
+ return $this->render('producto/lista.html.twig', [ 'productos' => $productos ]);
 }
 
 }

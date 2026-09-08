@@ -11,12 +11,12 @@ class ProductoFixtures extends Fixture
     public function load(ObjectManager $manager): void
     {
         
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 1; $i <= 10; $i++) {
             $producto = new Producto();
-            $producto->setNombre('PC '.$i);
+            $producto->setNombre('Producto '.$i);
             $producto->setDescripcion('Lorem Ipsum is siems se 1966');
             $producto->setPrecio(mt_rand(10, 100));
-            $producto->setImagen('images/productoX.jpg');
+            $producto->setImagen('images/producto'.$i.'.jpg');
             $manager->persist($producto);
         }
         $manager->flush();

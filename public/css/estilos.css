@@ -37,7 +37,60 @@ body {
 h1 {
     width: 100%;
     margin: 10px auto;
+    margin-left: 10px;
 
-    font-size: 16px;
+    font-size: 20px;
     font-family: Arial, sans-serif;
+}
+
+.productos {
+    width: 100%;
+    margin: 20px auto;
+    margin-left: 60px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 25px;
+}
+
+.producto { 
+    font-family: Arial, sans-serif;
+}
+
+.producto img {
+    width: 100%;
+    max-width: 160px;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.producto h2 {
+    font-size: 15px;
+    margin: 0 0 8px 0;
+}
+
+.producto p {
+    font-size: 12px;
+    line-height: 11px;
+}
+
+.producto-footer {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-detalles {
+    background-color: #222;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.producto-footer strong {
+    font-size: 13px;
 }
