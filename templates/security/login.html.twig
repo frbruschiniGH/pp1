@@ -4,15 +4,28 @@
 {# ... #}
 
 {% block body %}
-    {% if error %}
-        <p><div>Usuario o contrasenia incorrecta</div></p>
-    {% endif %}
- 
-    <form action="{{ path('app_login') }}" method="post">
-        <label for="username">Email:</label>
-        <input type="text" id="username" name="_username" value="{{ last_username }}"/>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="_password"/>
-        <button type="submit">login</button>
-    </form>
+
+    <div class="login">
+
+        {% if error %}
+            <div class="login-incorrecto"><p>Usuario o contrasenia incorrecta</p></div>
+        {% endif %}
+
+        <div class="autenticarse"><p>Autenticacion</p></div>
+
+        <form action="{{ path('app_login') }}" method="post">
+            <label for="username">Email:</label>
+            <input type="text" id="username" name="_username" value="{{ last_username }}"/>
+            
+            <div class="password">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="_password"/>
+            </div>
+
+            <div class="btn-login">
+                <button type="submit" class="btn-submit">login</button>
+            </div>
+        </form>
+    
+
 {% endblock %}
