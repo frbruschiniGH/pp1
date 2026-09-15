@@ -4,7 +4,7 @@ namespace App\Entity;
 
 use App\Repository\ProductoRepository;
 use Doctrine\ORM\Mapping as ORM;
-use App\DataFixtures;
+
 
 #[ORM\Entity(repositoryClass: ProductoRepository::class)]
 class Producto
