@@ -21,7 +21,10 @@
 
         <header>
             <div class="title">
-                Carrito de Compras
+                Carrito de Compras  - 
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    {{ app.user.nombre }}
+                {% endif %}
             </div>
 
             <div>
