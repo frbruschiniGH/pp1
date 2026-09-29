@@ -21,7 +21,9 @@
 
                 <div class = "producto-footer">
                     <button class="btn-detalles">
-                        Ver detalles
+                        <a href="{{ path('detalle_producto', {id: producto.id}) }}">
+                            Ver detalles
+                        </a>
                     </button>
 
                     <strong>

@@ -134,3 +134,13 @@ h1 {
     border-radius: 5px;
     border: none;
 }
+
+.btn-volver {
+    background-color: #222;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 13px;
+    font-weight: bold;
+}

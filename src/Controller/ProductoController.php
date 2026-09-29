@@ -17,4 +17,16 @@ public function listarProductos(ProductoManager $manager): Response
  return $this->render('producto/lista.html.twig', [ 'productos' => $productos ]);
 }
 
+
+    #[Route('/producto/{id}', name: 'detalle_producto')]
+public function detallePedido(ProductoManager $manager, int $id): Response
+{
+
+ $producto = $manager->getProducto($id); 
+ return $this->render('producto/detalle.html.twig', [ 'producto' => $producto ]);
 }
+
+}
+
+
+

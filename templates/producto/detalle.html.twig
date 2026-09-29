@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Detalle del Producto
+{% endblock %}
+
+{% block body %}
+
+    <h1>Detalle del producto</h1>
+
+    <div class="producto">
+        <div class="detalle-producto">
+            <img src ="{{asset(producto.imagen)}}" alt ="{{producto.nombre}}">
+        </div>
+    </div>
+
+<div class="volver">
+    <button class="btn-volver">
+        <a href="{{ path('listar_productos') }}">
+            Volver
+        </a>
+    </button>
+
+</div>
+{% endblock %}

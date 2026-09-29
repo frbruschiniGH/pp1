@@ -21,7 +21,7 @@
 
         <header>
             <div class="title">
-                Carrito de Compras  - 
+                Carrito de Compras  -   
                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                     {{ app.user.nombre }}
                 {% endif %}
@@ -29,7 +29,11 @@
 
             <div>
                 <button class="btn-light">Ver Orden</button>
-                <button class="btn-light">Salir</button>
+                <button class="btn-light">
+                    <a href="{{ path('app_logout') }}">
+                        Salir
+                    </a>
+                </button>
             </div>
         </header>
 
