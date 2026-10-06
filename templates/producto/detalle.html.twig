@@ -8,18 +8,21 @@
 
     <h1>Detalle del producto</h1>
 
-    <div class="producto">
-        <div class="detalle-producto">
-            <img src ="{{asset(producto.imagen)}}" alt ="{{producto.nombre}}">
+    <div class="detalle-producto">
+        
+        <img src ="{{asset(producto.imagen)}}" alt ="{{producto.nombre}}" class="imagen-producto">
+        
+        <div class="descripcion-producto">
+            <h2>{{ producto.nombre}}</h2>
+            <p> {{ producto.descripcion }} </p>
+            <strong>
+                Precio: $ {{ producto.precio }}
+            </strong>
+            <p><button class="btn-volver">
+                <a href="{{ path('listar_productos') }}">
+                    Volver
+                </a>
+            </button></p>
         </div>
     </div>
-
-<div class="volver">
-    <button class="btn-volver">
-        <a href="{{ path('listar_productos') }}">
-            Volver
-        </a>
-    </button>
-
-</div>
 {% endblock %}

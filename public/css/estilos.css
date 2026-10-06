@@ -12,6 +12,11 @@ header {
 
     box-sizing: border-box;
 }
+
+header a {
+    text-decoration: none;
+}
+
 body {
     margin: 0;
     background-color: white;
@@ -95,6 +100,12 @@ h1 {
     font-size: 13px;
 }
 
+.producto-footer a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
 .login-incorrecto p {
     color: red;
 }
@@ -137,10 +148,30 @@ h1 {
 
 .btn-volver {
     background-color: #222;
-    color: white;
     border: none;
     border-radius: 3px;
     padding: 4px 6px;
     font-size: 13px;
     font-weight: bold;
+    margin-top: 20px;
 }
+
+.descripcion-producto a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.volver a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.detalle-producto {
+    display: flex;
+    align-items: left;
+    margin-left: 20px;
+    gap: 50px;
+}
+
