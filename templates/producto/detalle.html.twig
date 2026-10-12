@@ -24,5 +24,14 @@
                 </a>
             </button></p>
         </div>
+
+        <div class="formulario-producto">
+            <form action="/agregar" method="POST">
+                <input type="text" name="cantidad" required>
+                <input type="hidden" name="idProducto" value={{ producto.id}}>
+
+                <button type="submit">Agregar a la orden</button>
+            </form>
+        </div>
     </div>
 {% endblock %}
