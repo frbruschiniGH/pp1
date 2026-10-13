@@ -6,6 +6,12 @@
 
 {% block body %}
 
+    {% for message in app.flashes('confirmacionProductoAgregado') %}
+        <div class="flash-notice">
+            {{ message }}
+        </div>
+    {% endfor %}
+
     <h1>Lista de productos</h1>
     
     <div class = "productos">

@@ -18,20 +18,19 @@
             <strong>
                 Precio: $ {{ producto.precio }}
             </strong>
-            <p><button class="btn-volver">
-                <a href="{{ path('listar_productos') }}">
+            
+            <p>Cantidad</p>
+            <form action="{{ path('agregar_producto') }}" method="POST">
+                <p><input type="text" name="cantidad" required></p>
+                <input type="hidden" name="idProducto" value="{{ producto.id}}">
+                    
+                <button type="submit" class="btn-agregar">Agregar a la orden</button>
+                <a href="{{ path('listar_productos') }}" class="btn-volver">
                     Volver
                 </a>
-            </button></p>
-        </div>
-
-        <div class="formulario-producto">
-            <form action="/agregar" method="POST">
-                <input type="text" name="cantidad" required>
-                <input type="hidden" name="idProducto" value={{ producto.id}}>
-
-                <button type="submit">Agregar a la orden</button>
-            </form>
+            </form>       
         </div>
     </div>
+
+
 {% endblock %}
