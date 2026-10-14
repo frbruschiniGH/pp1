@@ -121,4 +121,15 @@ class Orden
 
         return $this;
     }
+
+    public function agregarItem(Producto $producto, int $cantidad) : Item 
+    {
+        $item = new Item();
+        $item->setProducto($producto);
+        $item->setCantidad($cantidad);  
+
+        $this->addItem($item);
+        
+        return $item;
+    }
 }

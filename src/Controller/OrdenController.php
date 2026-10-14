@@ -6,15 +6,19 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
-
+use App\Manager\OrdenManager;
 
 class OrdenController extends AbstractController
 {
     #[Route('/orden/agregar', name: 'agregar_producto')]
-public function agregarProducto(Request $request): Response
+public function agregarProducto(Request $request, OrdenManager $manager): Response
 {
-    $idProducto = $request->request->get('idProducto'); // $_POST['idProducto']
-    $cantidad = $request->request->get('cantidad'); // $_POST['cantidad']
+    $idProducto = (int) $request->request->get('idProducto'); // $_POST['idProducto']
+    $cantidad = (int) $request->request->get('cantidad'); // $_POST['cantidad']
+
+    $usuario = $this->getUser();
+
+    $manager->agregarProducto($usuario, $idProducto, $cantidad);
 
     $this->addFlash(
         'confirmacionProductoAgregado',
