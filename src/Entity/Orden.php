@@ -88,14 +88,19 @@ class Orden
         return $this->item;
     }
 
-    public function addItem(Item $item): static
+    public function addItem(Item $item): Item
     {
-        if (!$this->item->contains($item)) {
-            $this->item->add($item);
-            $item->setOrden($this);
+        foreach ($this->item as $existente) {
+            if ($existente->equals($item)){
+                $existente->setCantidad($existente->getCantidad() + $item->getCantidad());
+                return $existente;
+            }
         }
 
-        return $this;
+        $this->item->add($item);
+        $item->setOrden($this);
+
+        return $item;
     }
 
     public function removeItem(Item $item): static
@@ -128,8 +133,6 @@ class Orden
         $item->setProducto($producto);
         $item->setCantidad($cantidad);  
 
-        $this->addItem($item);
-        
-        return $item;
+        return $this->addItem($item);
     }
 }
